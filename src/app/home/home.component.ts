@@ -11,32 +11,32 @@ import { Object } from '../entities';
 export class HomeComponent implements OnInit {
   list: Object[] = [];
   selected: Object | null = null;
-
+  
   constructor(private objectService : ObjectService) { }
 
-  ngOnInit(): void {
-this.objectService.fetchAll().
-subscribe(data=> this.list = data);
+      ngOnInit(): void {
+        this.objectService.fetchAll().
+          subscribe(data=> this.list = data);
 
-  }
+      }
 
 
-  select(object: Object) {
-    if (this.selected == object) {
-      this.selected = null;
-    } else {
-      this.selected = object;
-    }
-  }
+   select(object: Object) {
+     if (this.selected == object) {
+     this.selected = null;
+     } else {
+     this.selected = object;
+      }
+   }
 
-  deleteSelected() {
-    if (this.selected) {
-      this.objectService.delete(this.selected).subscribe(() => {
+    deleteSelected() {
+      if (this.selected) {
+       this.objectService.delete(this.selected).subscribe(() => {
         this.list = this.list.filter(item => item != this.selected);
         this.selected = null;
-      });
-    }
-  }
+         });
+      }
+    } 
 }
 
 

@@ -1,0 +1,23 @@
+<h1>Add Object</h1>
+
+<form (ngSubmit)="handleSubmit()" ngNativeValidate>
+    <label for="name">Label</label>
+    <input class="form-control" type="text" name="label" id="label" [(ngModel)]="object.label" required>
+    <label for="description">Description</label>
+    <input class="form-control" type="text" name="description" id="description" [(ngModel)]="object.description" required>
+    <label for="photo">image</label>
+    <input class="form-control" type="text " name="photo" id="photo" [(ngModel)]="object.photo" >
+    <fieldset>
+        <h2>User</h2>
+
+        <label for="name">Name</label>
+        <input class="form-control" type="text" name="name" id="name" [(ngModel)]="object.user.name" required>
+        <label for="firstName">Firstname</label>
+        <input class="form-control" type="text" name="street" id="firstName" [(ngModel)]="object.user.firstName" required>
+        <label for="address">Address</label>
+        <input class="form-control" type="text" name="address" id="address" [(ngModel)]="object.user.address ">
+       
+    </fieldset>
+    
+    <button class="btn btn-primary mt-3">Add</button>
+</form>
