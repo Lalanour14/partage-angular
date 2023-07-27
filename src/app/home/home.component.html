@@ -1,0 +1,7 @@
+<h1>Object list</h1>
+<a routerLink="/add-object" class="btn btn-primary m-3">Add object</a>
+<button class="btn btn-danger" *ngIf="selected" (click)="deleteSelected()">Delete</button>
+
+<div class="row g-4">
+    <app-object-item (click)="select(object)" *ngFor="let object of list" [object]="object" class="col-md-4"  [ngClass]="{active: object == selected}"   />
+</div>
