@@ -8,6 +8,8 @@ import { UserService } from '../user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+ 
+  user:User;
   list: User[] = [];
  
   
@@ -16,7 +18,8 @@ export class UserComponent {
       ngOnInit(): void {
         this.userService.fetchAll().
           subscribe(data=> this.list = data);
-
+       
+          
       }
 
 

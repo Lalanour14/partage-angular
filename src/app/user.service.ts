@@ -11,7 +11,7 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   fetchAll() {
-    return this.http.get<User[]>(environment.serverUrl+'/api/object');
+    return this.http.get<User[]>(environment.serverUrl+'/api/user');
   }
   add(user:User) {
     return this.http.post<User>(environment.serverUrl+'/api/user', user);

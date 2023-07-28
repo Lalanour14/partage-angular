@@ -10,6 +10,7 @@ import {AddObjectComponent } from './add-object/add-object.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserComponent } from './user/user.component';
 
+
 @NgModule({
   declarations: [
 
@@ -19,6 +20,7 @@ import { UserComponent } from './user/user.component';
     AddObjectComponent,
     NotFoundComponent,
     UserComponent
+    
   ],
   imports: [
     BrowserModule,
