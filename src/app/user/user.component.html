@@ -4,10 +4,10 @@
 <button  class="btn btn-danger" *ngIf="selected" (click)="deleteSelected()">Delete</button> 
     <div class="grid">
 
-        <div class="container-fluid text-center  " (click)="select(user)"  *ngFor="let user of list" [ngClass]="{active: user == selected}">
+        <div class="container-fluid text-center"  *ngFor="let user of list" >
     
         
-            <div class="card col-md-8  ">
+            <div class="card col-md-8" (click)="select(user)"  [ngClass]="{select: user == selected}">
             <h3 class="card-title"> {{user.name}}</h3>
             <h4 class="card-sudtitle">{{user.firstName}}</h4>
             <h5 class="card-text">{{user.address}}</h5>
