@@ -13,7 +13,7 @@ export class AddObjectComponent {
   object:Object = {
     label:'',
     description: '',
-    photo:[''],
+    photo:[],
     user: {
       name:'',
       firstName: '',
