@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../entities';
 import { UserService } from '../user.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-user',
@@ -14,7 +15,8 @@ export class UserComponent {
   selected: User | null = null;
   
   
-  constructor(private userService : UserService) { }
+  
+  constructor(private userService : UserService,private notificationService:NotificationService) { }
 
       ngOnInit(): void {
         this.userService.fetchAll().
@@ -35,6 +37,7 @@ export class UserComponent {
          if (this.selected) {
           this.userService.delete(this.selected).subscribe(() => {
            this.list = this.list.filter(item => item != this.selected);
+           this.notificationService.notify('Object delete success');
            this.selected = null;
             });
          }
