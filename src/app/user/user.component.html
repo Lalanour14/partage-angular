@@ -1,20 +1,19 @@
 
 <h1>Partage User </h1>
-
-
-
+<a routerLink="/" class="btn btn-primary m-3">Accueil</a>
+<button  class="btn btn-danger" *ngIf="selected" (click)="deleteSelected()">Delete</button> 
     <div class="grid">
 
-        <div class="container-fluid text-center  " *ngFor="let user of list">
+        <div class="container-fluid text-center  " (click)="select(user)"  *ngFor="let user of list" [ngClass]="{active: user == selected}">
     
         
-            <div class="card col-md-8 bg-info-subtle ">
+            <div class="card col-md-8  ">
             <h3 class="card-title"> {{user.name}}</h3>
             <h4 class="card-sudtitle">{{user.firstName}}</h4>
             <h5 class="card-text">{{user.address}}</h5>
             </div>
         
-
+        
         </div>
     </div>
        

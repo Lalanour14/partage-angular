@@ -1,0 +1,17 @@
+
+<a routerLink="/" class="btn btn-primary m-3">Accueil</a>
+<form (ngSubmit)="handleSubmit()" ngNativeValidate>
+
+    <h2>User</h2>
+
+    <label for="name">Name</label>
+    <input class="form-control" type="text" name="name" id="name" [(ngModel)]="user.name" required>
+    <label for="firstName">Firstname</label>
+    <input class="form-control" type="text" name="street" id="firstName" [(ngModel)]="user.firstName" required>
+    <label for="address">Address</label>
+    <input class="form-control" type="text" name="address" id="address" [(ngModel)]="user.address ">
+   
+
+
+<button class="btn btn-info mt-3">submit</button>
+</form>

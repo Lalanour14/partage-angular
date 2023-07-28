@@ -9,6 +9,7 @@ import { ObjectItemComponent } from './object-item/object-item.component';
 import {AddObjectComponent } from './add-object/add-object.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserComponent } from './user/user.component';
+import { UserInscriptionComponent } from './user-inscription/user-inscription.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UserComponent } from './user/user.component';
     ObjectItemComponent,
     AddObjectComponent,
     NotFoundComponent,
-    UserComponent
+    UserComponent,
+    UserInscriptionComponent
     
   ],
   imports: [

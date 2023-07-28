@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../entities';
 import { UserService } from '../user.service';
 
@@ -9,9 +9,10 @@ import { UserService } from '../user.service';
 })
 export class UserComponent {
  
-  user:User;
+
   list: User[] = [];
- 
+  selected: User | null = null;
+  
   
   constructor(private userService : UserService) { }
 
@@ -21,6 +22,23 @@ export class UserComponent {
        
           
       }
+
+      select(user: User) {
+        if (this.selected == user) {
+        this.selected = null;
+        } else {
+        this.selected = user;
+         }
+      }
+   
+       deleteSelected() {
+         if (this.selected) {
+          this.userService.delete(this.selected).subscribe(() => {
+           this.list = this.list.filter(item => item != this.selected);
+           this.selected = null;
+            });
+         }
+       } 
 
 
 }
